@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" data-th-href="@{'/css/output.css'}">
 </head>
 <body>
+    
     <div>
-        <h1 data-th-text="${name}">welcome</h1>
+        <h1 class = "text-2 fond-bold" data-th-text="${name}">welcome</h1>
         <p>hello world</p>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+
 </body>
 </html>

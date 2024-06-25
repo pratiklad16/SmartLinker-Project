@@ -13,7 +13,7 @@ public class PageController {
     @RequestMapping("/home")
     public String requestMethodName(Model model) {
         System.out.println("Home Page Handler");
-        model.addAttribute("name", "Pratik");
+        model.addAttribute("name", "Pratik Lad ");
         return "home";
     }
 }
