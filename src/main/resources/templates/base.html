@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" th:fragment="parent(content,title,script)">
+<html class = "dark" lang="en" xmlns:th="http://www.thymeleaf.org" th:fragment="parent(content,title,script)">
 <head>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
     <meta charset="UTF-8">
@@ -8,6 +8,7 @@
     <title th:replace="${title}">SmartLinker</title>
 </head>
 <body>
+    <div data-th-replace="navbar :: navbar"></div>
     <!--main Content --> 
     <section data-th-replace="${content}"></section>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
