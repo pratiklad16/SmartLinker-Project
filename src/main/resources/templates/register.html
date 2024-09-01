@@ -7,7 +7,7 @@
     <title>Signup</title>
   </head>
   <body>
-    <section id="content" >
+    <section id="content"   >
       <div class="grid grid-cols-12">
         <div class="col-span-4 md:col-span-2 lg:col-span-4"></div>
         <div class="col-span-4 md:col-span-8 lg:col-span-4">
@@ -20,92 +20,98 @@
             >
               Signup Here
             </h5>
-            <p class="font-normal text-gray-700 dark:text-gray-400">
-              Here are the biggest enterprise technology acquisitions of 2021 so
-              far, in reverse chronological order.
-            </p>
-            <div class="mb-5">
-              <label
-                for="Name"
-                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                >Name</label
-              >
-              <input
-                type="name"
-                id="name"
-                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="Pratik Lad"
-                required
-              />
-            </div>
-            <div class="mb-5">
-              <label
-                for="email"
-                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                >Email</label
-              >
-              <input
-                type="email"
-                id="email"
-                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="name@smartlinker.com"
-                required
-              />
-            </div>
-            <div class="mb-5">
-              <label
-                for="password"
-                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                >New Password</label
-              >
-              <input
-                type="password"
-                id="password"
-                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="Enter your password"
-                required
-              />
-            </div>
-            <div class="mb-5">
-              <label
-                for="phone"
-                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                >Contact Number</label
-              >
-              <input
-                type="phone"
-                id="phone"
-                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="86250***26"
-                required
-              />
-            </div>
-            <div class="mb-5">
-              <label
-                for="about"
-                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                >Write Something about yourself</label
-              >
-              <textarea
-                id="about"
-                rows="4"
-                class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="Write here..."
-              ></textarea>
-            </div>
-            <div class="flex justify-center space-x-3">
-              <button
-                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-              >
-                Signup
-              </button>
-
-              <button
-                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded flex justify-center"
-              >
-                Reset
-              </button>
-            </div>
+            <form data-th-action="@{/do-register}" method = "post" class = "mt-5" th:object="${userform}"> 
+              <div class="mb-5">
+                <label
+                  for="name"
+                  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  >Name</label
+                >
+                <input
+                  type="text"
+                  id="name"
+                  th:field = "*{name}"
+                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  placeholder="Pratik Lad"
+                  required
+                />
+              </div>
+              <div class="mb-5">
+                <label
+                  for="email"
+                  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  >Email</label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  th:field = "*{email}"
+                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  placeholder="name@smartlinker.com"
+                  required
+                />
+              </div>
+              <div class="mb-5">
+                <label
+                  for="password"
+                  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  >New Password</label
+                >
+                <input
+                  type="password"
+                  id="password"
+                  th:field = "*{password}"
+                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  placeholder="Enter your password"
+                  required
+                />
+              </div>
+              <div class="mb-5">
+                <label
+                  for="phoneNumber"
+                  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  >Contact Number</label
+                >
+                <input
+                  type="text"
+                  id="phoneNumber"
+                  th:field = "*{phoneNumber}"
+                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  placeholder="86250***26"
+                  required
+                />
+              </div>
+              <div class="mb-5">
+                <label
+                  for="about"
+                  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  >Write Something about yourself</label
+                >
+                <textarea
+                  id="about"
+                  rows="4"
+                  th:field = "*{about}"
+                  class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  placeholder="Write here..."
+                ></textarea>
+              </div>
+              <div class="flex justify-center space-x-3">
+                <button
+                type = "submit"
+                  class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                >
+                  Signup
+                </button>
+  
+                <button
+                type="reset"
+                  class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded flex justify-center"
+                >
+                  Reset
+                </button>
+              </div>
+            </form>
+            
           </a>
         </div>
         <div class="col-span-4"></div>
